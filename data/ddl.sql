@@ -4,7 +4,6 @@ create table users
   first_name text not null ,
   last_name text,
   email text not null,
-  password_digest text,
   created_at timestamp default CURRENT_TIMESTAMP,
   updated_at timestamp default CURRENT_TIMESTAMP
 );
@@ -73,6 +72,14 @@ create table sponsors
   updated_at timestamp default CURRENT_TIMESTAMP
 );
 
+create table tags
+(
+  id uuid primary key,
+  name text not null,
+  created_at timestamp default CURRENT_TIMESTAMP,
+  updated_at timestamp default CURRENT_TIMESTAMP
+);
+
 create table events
 (
   id uuid primary key,
@@ -80,25 +87,26 @@ create table events
   description text,
   starts_at timestamptz not null,
   ends_at timestamptz not null,
-  chapter_id uuid references chapters(id) not null ,
+  chapter_id uuid references chapters(id) not null,
   venue_id uuid references venues(id),
-  tag_id uuid references tags(id),
   canceled boolean default false,
   capacity int not null,
   created_at timestamp default CURRENT_TIMESTAMP,
   updated_at timestamp default CURRENT_TIMESTAMP
 );
 
-create table tags
-(
-  id uuid primary key,
-  name text not null
-);
-
 create table event_sponsors
 (
   event_id uuid references events(id),
   sponsor_id uuid references sponsors(id),
+  created_at timestamp default CURRENT_TIMESTAMP,
+  updated_at timestamp default CURRENT_TIMESTAMP
+);
+
+create table event_tags
+(
+  event_id uuid references events(id),
+  tag_id uuid references tags(id),
   created_at timestamp default CURRENT_TIMESTAMP,
   updated_at timestamp default CURRENT_TIMESTAMP
 );

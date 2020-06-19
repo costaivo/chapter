@@ -6,7 +6,7 @@ Welcome to Chapter, the newest project by freeCodeCamp. We are glad to see your 
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It's only 196 words long.
 
-You should [join our Discord server](https://discord.gg/vbRUYWS) to get connected with people interested in this project and to be aware of our future announcements. 
+You should [join our Discord server](https://discord.gg/PXqYtEh) to get connected with people interested in this project and to be aware of our future announcements. 
 
 ## Here are some ways to help us
 
@@ -14,28 +14,22 @@ You should [join our Discord server](https://discord.gg/vbRUYWS) to get connecte
 
 Implementation details are still being discussed and the project is currently at a very early stage. The stage of the project is changing on a daily basis, thoughts and ideas are being contributed at a very high pace.
 
-Keep in mind that our focused discussions takes place here on GitHub issue threads. We encourage you to take part in the discussions on topics you find interesting:
+Keep in mind that our focused discussions take place within GitHub [Issues](https://github.com/freeCodeCamp/chapter/issues) and [Pull Requests](https://github.com/freeCodeCamp/chapter/pulls).
 
-- [Introduce Yourself and Offer Your Skills](https://github.com/freeCodeCamp/chapter/issues/11)
-- [Next Steps](https://github.com/freeCodeCamp/chapter/issues/47)
-- [Shared Profile Data & Auth Across Collectives](https://github.com/freeCodeCamp/chapter/issues/40)
-- [Discovery and Searching Across Collective Instances](https://github.com/freeCodeCamp/chapter/issues/33)
-- [Accessibility](https://github.com/freeCodeCamp/chapter/issues/65)
-- [API](https://github.com/freeCodeCamp/chapter/issues/17)
-- [Documentation](https://github.com/freeCodeCamp/chapter/issues/12)
-- [Testing](https://github.com/freeCodeCamp/chapter/issues/76)
-- [Mobile App](https://github.com/freeCodeCamp/chapter/issues/20)
-- [Internationalization / Translation](https://github.com/freeCodeCamp/chapter/issues/21)
+Before opening a new issue, please search through current issues to verify that you are not creating a duplicate issue.
 
-If you can't find what you were looking for in the above topics then feel free to [open a new issue](https://github.com/freeCodeCamp/chapter/issues/new/choose) to share your views or to report bugs. 
+If you can't find what you were looking for then [open a new issue](https://github.com/freeCodeCamp/chapter/issues/new/choose) to share your views or to report bugs. 
 
-Before opening a new issue please search through current issues to verify that you are not creating a duplicate issue.
+For new "user stories" please do the following:
+
+1. Check your idea does not already exist as an [MVP issue](https://github.com/freeCodeCamp/chapter/labels/MVP), or in the [post-MVP list](https://github.com/freeCodeCamp/chapter/issues/84).
+1. [Create a new "Issue"](https://github.com/freeCodeCamp/chapter/issues/new/choose) and post details about the suggested user story.
 
 ### 2. Contribute to this open source codebase
 
 If you feel ready to contribute code to this project then you should follow the below steps:
 
-#### Step 1: Fork the repository on GitHub
+<details><summary>Step 1: Fork the repository on GitHub</summary>
 
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of Chapter's repository (a.k.a repo) on GitHub.
 
@@ -46,9 +40,9 @@ Follow these steps to fork the `https://github.com/freeCodeCamp/chapter` reposit
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([Need help?](https://help.github.com/articles/fork-a-repo/)).
 3. After the repository has been forked, you will be taken to your copy of the Chapter repository at `https://github.com/YOUR_USER_NAME/chapter`.
 
-![an image illustrating the fork button](docs/images/how-to-fork.png)
-
-#### Step 2: Preparing the development environment
+![an image illustrating the fork button](docs/assets/how-to-fork.png)
+</details>
+<details><summary>Step 2: Preparing the development environment</summary>
 
 Install [Git](https://git-scm.com/) and a code editor of your choice. We recommend using [VS Code](https://code.visualstudio.com/). 
 
@@ -94,7 +88,9 @@ You need a reference from your local copy to the `upstream` repository in additi
     upstream    https://github.com/freeCodeCamp/chapter.git (push)
     ```
 
-#### Step 3: Making changes to Chapter codebase :fire:
+</details>
+
+<details><summary>Step 3: Making changes to Chapter codebase :fire:</summary>
 
 > **Note: Always follow the below steps before you start coding or working on an issue.**
 
@@ -245,16 +241,56 @@ You are now almost ready to make changes to files but before that you should **a
     ```sh
     git push origin fix/signin
     ```
+</details>
 
-#### Step 4: Proposing a Pull Request (PR)
+<details><summary>Step 4: Proposing a Pull Request (PR)</summary>
 
-After you've committed and pushed changes to your fork, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
+#### How to prepare a good Pull Request title:
+
+When opening a Pull Request(PR), use the following scope table to decide what to title your PR in the following format:
+
+`fix/feat/chore/refactor/docs/perf (scope): PR Title`
+
+An example is `feat(client): night mode`.
+
+| Scope | Documentation |
+|---|---|
+| `api` | For Pull Requests making changes to the APIs, routes and its architecture |
+| `db` | For Pull Requests making changes related to database |
+| `client` | For Pull Requests making changes to client platform logic or user interface |
+| `docs` | For Pull Requests making changes to the project's documentation |
+
+#### Proposing a Pull Request (PR)
+
+1. Once the edits have been committed & pushed, you will be prompted to create a pull request on your fork's GitHub Page. Click on `Compare and Pull Request`.
+
+    ![an image showing Compare & pull request prompt on GitHub](docs/assets/pull-request-prompt.png)
+
+2. By default, all pull requests should be against the Chapter main repo, `master` branch.
+
+    ![ an image showing the comparison of forks when making a pull request](docs/assets/comparing-forks-for-pull-request.png)
+
+3. Submit the pull request from your branch to Chapter's `master` branch.
+
+4. In the body of your PR include a more detailed summary of the changes you made and why.
+
+    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+
+    - Fill in the details as they seem fit to you. This information will be reviewed and a decision will be made whether or not your pull request is going to be accepted.
+
+    - If the PR is meant to fix an existing bug/issue then, at the end of
+      your PR's description, append the keyword `closes` and #xxxx (where xxxx
+      is the issue number). Example: `closes #1337`. This tells GitHub to
+      automatically close the existing issue, if the PR is accepted and merged.
+
+You have successfully created a PR. Congratulations! :tada:
+</details>
 
 ## Frequently Asked Questions
 
 ### What do we need help with right now?
 
-We are in the very early stages of development on this new application. We value your insight and expertise.  In order to prevent duplicate issues, please search through our existing issues to see if there is one for which you would like to provide feedback. We are currently trying to consolidate many of the issues based on topics like documentation, user interface, API endpoints, and architecture. Please [join our Discord server](https://discord.gg/vbRUYWS) to stay in the loop.
+We are in the very early stages of development on this new application. We value your insight and expertise.  In order to prevent duplicate issues, please search through our existing issues to see if there is one for which you would like to provide feedback. We are currently trying to consolidate many of the issues based on topics like documentation, user interface, API endpoints, and architecture. Please [join our Discord server](https://discord.gg/PXqYtEh) to stay in the loop.
 
 ### I found a typo. Should I report an issue before I can make a pull request?
 
